@@ -1,5 +1,4 @@
 import argparse
-import os
 
 
 class Parser(argparse.ArgumentParser):
