@@ -22,7 +22,6 @@ class Parser(argparse.ArgumentParser):
         self.description = 'Утилита для сканирования TCP и UDP портов. ' \
                            'Автор: Шимаев Дмитрий, КН203(МЕН280208)'
 
-
         self.add_argument('-d', '--destination', type=self._check_destination,
                           help='ip для сканирования', default='127.0.0.1')
         self.add_argument('-p', '--ports', nargs='+', type=self._check_port,
