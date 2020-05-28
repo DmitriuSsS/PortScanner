@@ -1,8 +1,8 @@
 import argparse
+import os
 
 
 class Parser(argparse.ArgumentParser):
-    description = 'Утилита для сканирования TCP и UDP портов'
 
     @staticmethod
     def _check_destination(ip: str):
@@ -20,6 +20,10 @@ class Parser(argparse.ArgumentParser):
         raise argparse.ArgumentTypeError(f'Неверный порт: {port}')
 
     def do_settings(self):
+        self.description = 'Утилита для сканирования TCP и UDP портов. ' \
+                           'Автор: Шимаев Дмитрий, КН203(МЕН280208)'
+
+
         self.add_argument('-d', '--destination', type=self._check_destination,
                           help='ip для сканирования', default='127.0.0.1')
         self.add_argument('-p', '--ports', nargs='+', type=self._check_port,
